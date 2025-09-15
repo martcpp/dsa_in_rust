@@ -43,7 +43,22 @@ fn find_longest_str(words:&[&str]) -> Option<String>{
     }
 }
 
+fn resvers_a_string(word:&str) -> String{
+    let mut revser = String::new();
+ 
+    
+    if word.is_empty(){
+        return word.to_string()
+    }
 
+    let array_wp:Vec<char> =  word.chars().collect();
+    let length =  word.len()-1; //GOD 3-1 2
+    for i in 0..=length{ //0 1 2
+        revser.push(array_wp[length-i]); 
+       // length -1;
+    }
+    revser
+}
 
 #[cfg(test)]
 mod tests {
@@ -64,4 +79,11 @@ mod tests {
         let words2: [&str;0] = [];
         assert_eq!(find_longest_str(&words2), None);
     }
+    #[test]
+    fn test_resvers_a_string(){
+        let word = "hello";
+        assert_eq!(resvers_a_string(word), "olleh".to_string());
+        let word2 = "";
+        assert_eq!(resvers_a_string(word2), "".to_string());
+    }   
 }
