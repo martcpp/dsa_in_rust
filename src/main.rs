@@ -27,6 +27,24 @@ fn find_min(nums: &[f64]) -> Option<f64> {
 }
 
 
+fn find_longest_str(words:&[&str]) -> Option<String>{
+    let mut longest =  String::new();
+    
+    match words.len(){
+        0 => None,
+        _ => {
+            for word in words.iter(){
+                if word.len() > longest.len(){
+                    longest = word.to_string();
+                }
+            }
+            Some(longest)
+        }
+    }
+}
+
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -38,5 +56,12 @@ mod tests {
         assert_eq!(find_min(&nums2), Some(-1.0));
         let nums3: [f64; 0] = [];
         assert_eq!(find_min(&nums3), None);
+    }
+    #[test]
+    fn test_find_longest_str(){
+        let words = ["apple", "banana", "cherry", "date"];
+        assert_eq!(find_longest_str(&words), Some("banana".to_string()));
+        let words2: [&str;0] = [];
+        assert_eq!(find_longest_str(&words2), None);
     }
 }
