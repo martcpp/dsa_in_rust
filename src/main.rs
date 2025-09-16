@@ -1,3 +1,4 @@
+mod sort;
 fn main() {
     println!("Hello, world!");
     let pinf = f64::INFINITY;
@@ -45,7 +46,6 @@ fn find_longest_str(words:&[&str]) -> Option<String>{
 
 fn resvers_a_string(word:&str) -> String{
     let mut revser = String::new();
- 
     
     if word.is_empty(){
         return word.to_string()
