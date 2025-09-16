@@ -1,11 +1,17 @@
 mod sort;
+use sort::bubble_sort;
 fn main() {
-    println!("Hello, world!");
-    let pinf = f64::INFINITY;
-    let ninf = f64::NEG_INFINITY;
-    let nan = f64::NAN;
-    let ed  = f64::EPSILON;
-    println!("pinf: {}, ninf: {}, nan: {}, ed: {}", pinf, ninf, nan, ed);
+    // println!("Hello, world!");
+    // let pinf = f64::INFINITY;
+    // let ninf = f64::NEG_INFINITY;
+    // let nan = f64::NAN;
+    // let ed  = f64::EPSILON;
+    // println!("pinf: {}, ninf: {}, nan: {}, ed: {}", pinf, ninf, nan, ed);
+
+    let mut arr = [64, 34, 25, 12, 22, 11, 90];
+    print!("Before sorting: {:?}", arr);
+    bubble_sort(&mut arr);
+    print!("After sorting: {:?}", arr);
 }
 
 
