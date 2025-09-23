@@ -1,8 +1,21 @@
 mod sort;
 mod io;
-use io::*;
+use io::{readfile,readfilebuffer,myread,readuserinput,commandline};
 use sort::bubble_sort;
 fn main() {
+
+    // let input = readuserinput();
+    // println!("You entered: {}", input);
+
+    let (cmd1,cmd2) = commandline();
+    println!("Command line arguments: {} {}", cmd1, cmd2);
+
+    // let path = "../data.txt";
+    let contents = readfilebuffer(&cmd1).unwrap();
+    let converted = String::from_utf8_lossy(&contents);
+    println!("File contents:\n{}", converted);
+    println!("File contents:\n{:?}", &contents);
+
     // println!("Hello, world!");
     // let pinf = f64::INFINITY;
     // let ninf = f64::NEG_INFINITY;
@@ -10,10 +23,12 @@ fn main() {
     // let ed  = f64::EPSILON;
     // println!("pinf: {}, ninf: {}, nan: {}, ed: {}", pinf, ninf, nan, ed);
 
-    let mut arr = [64, 34, 25, 12, 22, 11, 90];
-    print!("Before sorting: {:?}", arr);
-    bubble_sort(&mut arr);
-    print!("After sorting: {:?}", arr);
+    // let mut arr = [64, 34, 25, 12, 22, 11, 90];
+    // print!("Before sorting: {:?}", arr);
+    // bubble_sort(&mut arr);
+    // print!("After sorting: {:?}", arr);
+
+
 }
 
 
