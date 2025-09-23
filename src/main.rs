@@ -1,4 +1,6 @@
 mod sort;
+mod io;
+use io::*;
 use sort::bubble_sort;
 fn main() {
     // println!("Hello, world!");
